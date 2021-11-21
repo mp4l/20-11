@@ -1,0 +1,209 @@
+@import url('6a470f915bf607c43d29b1c64b2869b1.png');
+@font-face {
+    font-family: "handy";
+    src: url(myfont.woff);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --level-one: translateZ(3rem);
+    --level-two: translateZ(6rem);
+    --level-three: translateZ(9rem);
+    
+    --fw-normal: 400;
+    --fw-bold: 700;
+    
+    --clr: #d2dd31;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'handy', sans-serif, 'Courier New', Courier, monospace;
+    background-color: #3B4049;
+  }
+  
+  .card {
+    height: 500px;
+    width: 800px;
+    position: relative;
+    justify-content: center;
+    z-index: 0;
+  }
+  
+  .card__content {
+    text-align: justify;
+    position: relative;
+    padding: 15em 5em;
+    transition: transform 3s;
+    transform-style: preserve-3d;
+  }
+  
+  .card:hover .card__content {
+    transform: rotateY(.5turn);
+  }
+  .card__front,
+  .card__back {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    color:rgb(161, 110, 51);
+    z-index: 0;
+    justify-content: center;
+  }
+  
+  .card__front {
+    background-color: rgb(169, 133, 103);
+    background-blend-mode: overlay;
+    color: rgb(218, 171, 71);
+  }
+  
+  .card__front::before {
+    content: '';
+    position: absolute;
+    --spacer: 1em;
+    top: var(--spacer);
+    bottom: var(--spacer);
+    left: var(--spacer);
+    right: var(--spacer);
+    border: 3px solid currentColor;
+    transform: var(--level-one);
+  }
+  .card__front p.a {
+    padding-top: 2.5rem;
+    padding-left: 2.5rem;
+    vertical-align: text-top;
+    text-align: left;
+    font-family: 'Courier New';
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: rgba(24, 20, 20, 0.918);
+    text-decoration: underline;
+    z-index: 1;
+  }
+  .card__front p.b{
+    top: 200px;
+    padding-top: 5px;
+    padding-right: 2.5rem;
+    text-align: right;    
+    font-family: 'Courier New';
+    font-size: 2.0rem;
+    text-transform: uppercase;
+    color: rgba(24, 20, 20, 0.918);
+    text-decoration: underline;
+    z-index: 1;
+  }
+  .card__front p.c{
+    padding: 100px;
+    z-index: 1;
+  }
+  .card__front hr{
+    top: 3.0rem;
+    align-items:center;
+    height: 4px;
+    background-color: black;
+    color: black;
+    width: 300px;
+    border-color: black ; 
+    margin-left: 2.5rem;
+    margin-top: 2.0rem;
+ }
+  .card__title {
+    font-size: 3.5rem;
+    transform: var(--level-three);
+    order: 2;
+    text-transform: uppercase;
+    border-radius: 8px;
+  }
+  .card__front.line{
+    border-left: 3px black;
+      height: 3px;
+      width: 50 px;
+  }
+  .card__subtitle {
+    transform: var(--level-two);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: .75rem;
+    font-weight: var(--fw-bold);
+    opacity: .7;
+  }
+  
+  .card__body {
+    transform: var(--level-two);
+    font-weight: var(fw-normal);
+    font-size: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  
+  
+  .card__back {
+    transform: rotateY(.5turn);
+    color: var(--clr);
+    background: rgb(173, 128, 31);
+
+  }
+
+
+.envelope .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: transparent;
+  color: #333;
+  font-size: 16px;
+  padding: 50px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  background-image: url('6a470f915bf607c43d29b1c64b2869b1.png');
+  background-size: cover;
+  background-blend-mode: overlay;
+}
+
+.envelope .btn:hover {
+  background-color: #333;
+}
+.envelope {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-top: 250px solid transparent;
+  border-right: 375px solid rgb(169, 133, 103);
+  border-bottom: 250px solid rgb(169, 133, 103);
+  border-left: 375px solid rgba(199, 120, 55, 0.671);
+  z-index: 3;
+}
+.lid{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left:0;
+  border-right: 375px solid transparent;
+  border-bottom: 250px solid transparent;
+  border-left: 375px solid transparent;
+  border-top: 250px solid rgb(146, 86, 38);
+  z-index: 3;
+}
